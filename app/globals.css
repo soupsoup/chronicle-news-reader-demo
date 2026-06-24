@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/*
+  Color tokens ported directly from the real iOS app's Utilities/AppColors.swift
+  (light-mode values — primaryBlue #1F5BFF, backgroundPrimary #FAFAF7, etc).
+  Same editorial palette, same names, just CSS variables instead of SwiftUI Color.
+*/
+@theme {
+  --color-primary-blue: #1F5BFF;
+  --color-accent: #17A773;
+  --color-text-primary: #151515;
+  --color-text-secondary: #5F6368;
+  --color-bg-primary: #FAFAF7;
+  --color-bg-secondary: #F1F0EB;
+  --color-border: #E1E0DA;
+  --font-serif-editorial: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-secondary text-text-primary;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+@layer components {
+  .editorial-card {
+    @apply bg-bg-primary border border-border/60 rounded-2xl shadow-[0_6px_16px_rgba(0,0,0,0.06)];
+  }
+}
